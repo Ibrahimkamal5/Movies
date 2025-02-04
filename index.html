@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Website</title>
+    <link rel="website icon" href="images/internet.png" type="png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
+    <!-- Website Icon-->
+    <link rel="website icon" href="images/internet.png" type="png" />
+    <!--  Render all Element Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- All Main ملف المطغوط عشان العميل يشووفه  -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Font Family Work Sans-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"rel="stylesheet"/>
+    <link rel="stylesheet" href="css/move.css" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <a href="#" class="logo">Movice</a>
+      <ul class="nav">
+        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-address-card"></i> About</a></li>
+        <li><a href="#"><i class="fa-solid fa-child"></i> Kids</a></li>
+        <li><a href="#"><i class="fa-solid fa-list"></i> MyList</a></li>
+      </ul>
+      <div class="search">
+        <input type="search" />
+        <i class="fa-solid fa-search"></i>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Banner -->
+    <div class="banner">
+      <div class="content active">
+        <img
+          src="imagesTitle/the-little-mermaid-title.png"
+          alt=""
+          class="movie-title"
+        />
+        <h4>
+          <span>2025</span> <span><i>12+</i></span> <span>2h 14min</span>
+          <span>Romance</span>
+        </h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          consequuntur maxime consectetur fuga recusandae perferendis? Dolorem
+          voluptas cupiditate temporibus ipsam corrupti fuga odio eveniet
+          necessitatibus quibusdam ad reiciendis, alias odit!
+        </p>
+        <div class="button">
+          <a href="#"><i class="fa-solid fa-play"></i> Watch</a>
+          <a href="#"><i class="fa-solid fa-plus"></i> MyList</a>
+        </div>
+      </div>
+
+      <!-- Start carousel_box -->
+      <div class="carousel_box">
+        <div class="carousel">
+          <div class="carousel-item" onclick="changeBg('bg-little-mermaid.jpg', 'the-little-mermaid')">
+            <img src="movies/the-little-mermaid.jpeg" alt="" />
+          </div>
+          <div class="carousel-item"  onclick="changeBg('the-covenant.jpg', 'the-covenant.jpg')">
+            <img src="movies/the-covenant.jpg" alt="" />
+          </div>
+          <div class="carousel-item" onclick="changeBg('the-black-demon.jpg', 'the-black-demon.jpg')">
+            <img src="movies/the-black-demon.jpg" alt="" />
+          </div>
+          <div class="carousel-item" onclick="changeBg('bg-65.jpeg', 'bg-65')">
+            <img src="movies/65.jpg" alt="" />
+          </div>
+          <div class="carousel-item"  onclick="changeBg('the-tank.jpeg', 'the-tank.jpeg')">
+            <img src="movies/the-tank.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- End carousel_box -->
+
+      <a href="#" class="play" onclick="toggleVideos()">
+        <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+         Watch Trailer
+      </a>
+      <ul class="scl">
+        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="trailer">
+      <video src="videomove/سورة لقمان بصوت الشيخ القارئ اسلام صبحي (alday.news).mp4" controls autoplay loop></video>
+      <img
+        class="close"
+        src="movies/close.png"
+        alt=""
+        onclick="toggleVideos()"
+      />
+    </div>
+    <!-- End Banner -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="move.js"></script>
+  </body>
+</html>

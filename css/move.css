@@ -1,0 +1,425 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-primary: #ff3700;
+    /* --color-primary: #673ab7; */
+     --color-secondary:  #ffffff;
+    /* --color-tertiary: #c495f0; */ 
+}
+body{
+    background: #000000; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    z-index: 10;
+}
+.logo{
+ font-size: 30px;
+ color: #ffffff;
+ letter-spacing: 1px;
+ font-weight: 800;
+ text-indent: 30px;
+ transition: 0.5s;
+}
+.logo:hover{
+    color: var(--color-primary);
+    box-shadow: 0px 0px 0px var(--color-primary);
+}
+.nav  {
+    list-style: none;
+    margin: 0 10px;
+    display: flex;
+}
+.nav li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-indent: 5px;
+}
+
+.nav li:hover a{
+    color: var(--color-primary);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 20px var(--color-primary);
+}
+.search{
+    position: relative;
+    width: 300px;
+    height: 40px;
+    margin: auto 80px;
+}
+.search input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--color-secondary);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    outline: none;
+    border-radius: 5px;
+    padding: 0 10px !important;
+    backdrop-filter: blur(10px) !important;
+    text-indent: 35px;
+}
+
+.search input::placeholder{
+  color: var(--color-secondary);
+}
+
+.search i{
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ left: 10px;
+ padding-right: 10px;
+ color: var(--color-secondary);
+ border-right: 1px solid var(--color-secondary);;   
+}
+
+.banner{
+    background-image: url("../movies/bg-little-mermaid.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: 0.5s;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    
+}
+.banner p {
+
+    font-size: 17px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+}
+.content{
+    position: relative;
+    max-width: 550px;
+    display: none;
+    transform: scale(0);
+    transition: 0.5s;
+}
+.content.active{
+    display: block;
+    visibility: visible;
+    transform: scale(1);
+    transition: 0.5s;
+}
+.movie-title{
+    max-width: 250px;
+}
+.banner .content h4 span{
+    padding: 0 10px;
+    color: var(--color-secondary);
+    border-right: 1px solid rgba(255,255,255,0.5);
+}
+.banner .content h4 span:first-child{
+    padding-left: 0;
+}
+.banner .content h4 span:last-child{
+    border-right: none;
+}
+
+.banner .content h4 span i{
+   background-color: var(--color-primary);
+   color: var(--color-secondary);
+   padding: 0 8px;
+   display: inline-block;
+   border-radius: 5px;
+
+}
+.banner .content .button {
+    position: relative;
+}
+
+.banner .content .button a{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 6px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.banner .content .button a:nth-child(2){
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.banner .content .button a:hover:nth-child(2){
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.banner .carousel_box{
+    position: relative;
+    min-width: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+.carousel{
+    position: relative;
+    height: 450px;
+    perspective: 1500px;
+}
+
+.carousel .carousel_item{
+    width: 250px;
+    cursor: pointer;
+}
+
+ .carousel .carousel_item img{
+    max-width: 235px;
+    border-radius: 10px;
+    transform: translateX(8px) translateY(-100px);
+    object-fit: cover;
+    object-position: center;
+}
+.play{
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--color-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer !important;
+    transition: 0.3s;
+}
+
+.play:hover{
+    color: var(--color-primary);
+}
+.play i {
+    margin-right: 10px;
+    font-size: 40px;
+    cursor: pointer !important;
+}
+.play:hover{
+    color: var(--color-primary);
+}
+.scl{
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+} 
+
+.scl a{
+    color: var(--color-secondary);
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.scl a:hover{
+    color: var(--color-primary);
+    /* box-shadow: 0 0 25px 25px var(--color-primary); */
+    
+}
+.trailer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.trailer.active{
+    visibility: visible;
+    opacity: 1;
+}
+.trailer video{
+    max-width: 900px;
+    outline: none;
+}
+.close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    filter: invert(1);
+    max-width: 30px;
+}
+
+/* الهواتف الذكية */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .search {
+        width: 80%;
+        margin: 10px auto;
+    }
+    .banner {
+        padding: 20px;
+        text-align: center;
+    }
+    .banner .content {
+        max-width: 100%;
+    }
+    .carousel_box {
+        min-width: 100%;
+        flex-direction: column;
+    }
+    .play {
+        bottom: 20px;
+        left: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* الأجهزة اللوحية */
+@media (max-width: 992px) {
+    .banner {
+        padding: 50px;
+        flex-direction: column;
+    }
+    .carousel_box {
+        min-width: 90%;
+    }
+    .play {
+        
+        bottom: 30px;
+        left: 50px;
+    }
+}
+
+/* الشاشات الكبيرة */
+@media (min-width: 1200px) {
+    .banner {
+        padding: 100px;
+    }
+    .carousel_box {
+      
+        min-width: 650px;
+    }
+}
+@media (max-width: 767px) {
+    .nav {
+        width: 104%;
+        text-align: center;
+    }
+    .nav li a{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+}
+
+/* تحسين البانر ليكون أكثر توافقًا مع الجوالات */
+@media (max-width: 600px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .content {
+        margin-top: 140px;
+        max-width: 90%;
+    }
+    .banner .carousel_box {
+        min-width: 100%;
+        margin-top: 200px;
+        flex-direction: column;
+    }
+}
+
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .play {
+        font-size: 1rem;
+        left: 10px;
+        bottom: 20px;
+    }
+    .carousel{
+        margin-top: -300px;
+    }
+    .scl{
+        margin-bottom: -26px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .search {
+        width: 90%;
+    }
+}
